@@ -38,7 +38,7 @@ server.use('/my/article', cateRouter)
 // 6.0 错误处理中间件用来检查token合法性
 server.use((err, req, res, next) => {
     console.log('有错误', err)
-    if (err.name === 'UnauthorizedError') {
+     if (err.name === 'UnauthorizedError') {
       // res.status(401).send('invalid token...');
       res.status(401).send({ code: 1, message: '身份认证失败！' });
     }
